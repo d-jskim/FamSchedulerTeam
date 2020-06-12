@@ -5,7 +5,6 @@ import java.util.*;
 
 public class Data implements Serializable{
 	private String name; // 클라이언트 이름
-	private String receiver; // 귓말을 받을 클라이언트 이름
 	private String message; // 클라이언트의 메시지
 	private int state; // 클라이언트의 접속과 종료상태를 저장하는 변수
 	private transient ObjectOutputStream oos; // 자료전달 객체
@@ -38,12 +37,6 @@ public class Data implements Serializable{
 	public void setName(String name) {
 		this.name = name;
 	}
-	public String getReceiver() {
-		return receiver;
-	}
-	public void setReceiver(String receiver) {
-		this.receiver = receiver;
-	}
 	public String getMessage() {
 		return message;
 	}
@@ -70,7 +63,7 @@ public class Data implements Serializable{
 	}
 	@Override
 	public String toString() {
-		return String.format("Data [name=%s, receiver=%s, message=%s, state=%s, userName=%s]", name, receiver, message,
+		return String.format("Data [name=%s, receiver=%s, message=%s, state=%s, userName=%s]", name, message,
 				state, userName);
 	}
 	

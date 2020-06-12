@@ -1,15 +1,10 @@
 package com.fam.VO;
 
 
-import java.sql.Date; //util.Date는 오라클과 연동 불가
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+ //util.Date는 오라클과 연동 불가
+
 import java.time.LocalDate;
-import java.time.ZoneId;
-
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
-
-import com.fam.util.LocalDateAdapter;
 
 import javafx.beans.property.IntegerProperty;
 import javafx.beans.property.ObjectProperty;
@@ -18,6 +13,7 @@ import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 
+import com.fam.util.LocalDateAdapter;
 
 public class Task {
 	
@@ -30,7 +26,7 @@ public class Task {
 	private ObjectProperty<LocalDate> startDate;
 	private ObjectProperty<LocalDate> endDate;
 	private StringProperty memo;
-	private IntegerProperty like;
+	private IntegerProperty likeNo;
 	
 	/**
 	 * [NEW]버튼을 클릭했을 때 기본생성자로 생성한 Task객체에 새로운 값 넣어야 하기 때문에 필요한 기본생성자(args X & default value 포함)
@@ -48,7 +44,7 @@ public class Task {
 		this.startDate = new SimpleObjectProperty<LocalDate>(LocalDate.of(2020, 01, 01));
 		this.endDate = new SimpleObjectProperty<LocalDate>(LocalDate.of(2020, 01, 01));
 		this.memo = new SimpleStringProperty("none");
-		this.like = new SimpleIntegerProperty(0);
+		this.likeNo = new SimpleIntegerProperty(0);
 
 	}
 	/**
@@ -66,10 +62,10 @@ public class Task {
 		this.taskNo = new SimpleIntegerProperty(0);
 		this.status = new SimpleStringProperty("not started");
 		this.substitute = new SimpleStringProperty("none");
-		this.startDate = new SimpleObjectProperty<LocalDate>(LocalDate.of(2020, 01, 01));
-		this.endDate = new SimpleObjectProperty<LocalDate>(LocalDate.of(2020, 01, 01));
+		this.startDate = new SimpleObjectProperty<LocalDate>(LocalDate.now());
+		this.endDate = new SimpleObjectProperty<LocalDate>(LocalDate.now());
 		this.memo = new SimpleStringProperty("none");
-		this.like = new SimpleIntegerProperty(0);
+		this.likeNo = new SimpleIntegerProperty(0);
 
 	}
 	
@@ -90,7 +86,7 @@ public class Task {
 	 * @param like
 	 */
 	public Task(int taskNo, String category, String task, String status, String memberId, 
-			String substitute, String sDate, String eDate, String memo, int like){
+			String substitute, String sDate, String eDate, String memo, int likeNo){
 		
 		this.taskNo = new SimpleIntegerProperty(taskNo);
 		this.category = new SimpleStringProperty(category);
@@ -101,7 +97,7 @@ public class Task {
 		this.startDate =  new SimpleObjectProperty<LocalDate>(LocalDate.of(intDate(sDate)[0], intDate(sDate)[1], intDate(sDate)[2]));
 		this.endDate = new SimpleObjectProperty<LocalDate>(LocalDate.of(intDate(eDate)[0], intDate(eDate)[1], intDate(eDate)[2]));
 		this.memo = new SimpleStringProperty(memo);
-		this.like = new SimpleIntegerProperty(like);
+		this.likeNo = new SimpleIntegerProperty(likeNo);
 	}
 
 	
@@ -218,15 +214,15 @@ public class Task {
 	}
 	
 	public int getLike() {
-		return like.get();
+		return likeNo.get();
 	}
 
 	public void setLike(int like) {
-		this.like.set(like);
+		this.likeNo.set(like);
 	}
 	
-	public IntegerProperty likeProperty() {
-		return like;
+	public IntegerProperty likeNoProperty() {
+		return likeNo;
 	}
 	
 	/**
@@ -252,7 +248,7 @@ public class Task {
 	public String toString() {
 		return String.format(
 				"Task [taskNo=%s, category=%s, task=%s, status=%s, member=%s, substitute=%s, startDate=%s, endDate=%s, memo=%s, like=%s]",
-				taskNo, category, task, status, member, substitute, startDate, endDate, memo, like);
+				taskNo, category, task, status, member, substitute, startDate, endDate, memo, likeNo);
 	}
 
 	

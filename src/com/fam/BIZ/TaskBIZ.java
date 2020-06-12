@@ -20,20 +20,20 @@ public class TaskBIZ {
 		return all;
 	}
 
-	public int getInsert(Task vo) {
+	public int task_insert(Task vo) {
 		System.out.println("¿©±â biz");
 		Connection conn = getConnection();
 
-		int r = new TaskDAO(conn).getInsertVO(vo);
+		int r = new TaskDAO(conn).task_insert(vo);
 		// close
 		Close(conn);
 		return r;
 	}
 
-	public void getDelete(int delTaskNo) {
+	public void task_delete(int delTaskNo) {
 		Connection conn = getConnection();
 
-		new TaskDAO(conn).getDelete(delTaskNo);
+		new TaskDAO(conn).task_delete(delTaskNo);
 		// close
 		Close(conn);
 	}
