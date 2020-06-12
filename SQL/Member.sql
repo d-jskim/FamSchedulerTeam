@@ -1,5 +1,6 @@
 --sequence 생성 전 삭제
 DROP SEQUENCE member_seq;
+
 --MemberId를 위한 Sequence 생성
 CREATE SEQUENCE member_seq
  START WITH     1
@@ -23,24 +24,24 @@ CREATE SEQUENCE member_seq
 
 --회원가입 sample data
 INSERT INTO member(memberNo, memberId, password, familyId, nickname) VALUES 
-(member_seq.nextVal,'apeach@famtodo.com','apeach', 1, '어피치');
+(member_seq.nextVal,'apeach@famtodo.com','apeach', 10, '어피치');
 
 INSERT INTO member(memberNo, memberId, password, familyId, nickname) VALUES 
-(member_seq.nextVal,'con@famtodo.com','con', 1, '콘');
+(member_seq.nextVal,'con@famtodo.com','con', 10, '콘');
 
 INSERT INTO member(memberNo, memberId, password, familyId, nickname) VALUES 
-(member_seq.nextVal,'ryan@famtodo.com','ryan', 1, '라이언');
+(member_seq.nextVal,'ryan@famtodo.com','ryan', 10, '라이언');
 
 INSERT INTO member(memberNo, memberId, password, familyId, nickname) VALUES 
-(member_seq.nextVal,'frodo@famtodo.com','frodo', 1, '프로도');
+(member_seq.nextVal,'frodo@famtodo.com','frodo', 20, '프로도');
 
 INSERT INTO member(memberNo, memberId, password, familyId, nickname) VALUES 
-(member_seq.nextVal,'jay@famtodo.com','jay', 1, '제이');
+(member_seq.nextVal,'jay@famtodo.com','jay', 20, '제이');
 
 INSERT INTO member(memberNo, memberId, password, familyId, nickname) VALUES 
-(member_seq.nextVal,'neo@famtodo.com','neo', 1, '네오');
+(member_seq.nextVal,'neo@famtodo.com','neo', 20, '네오');
 
-
+select * from member;
 
  --familyId(테스트용) 
 --TODO: [Family] 테이블 생성 시 table_seq.nextVal을 알려주고 user가 방 생성 OK 클릭하면 family데이터 삽입
