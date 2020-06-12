@@ -62,8 +62,8 @@ public class Task {
 		this.taskNo = new SimpleIntegerProperty(0);
 		this.status = new SimpleStringProperty("not started");
 		this.substitute = new SimpleStringProperty("none");
-		this.startDate = new SimpleObjectProperty<LocalDate>(LocalDate.of(2020, 01, 01));
-		this.endDate = new SimpleObjectProperty<LocalDate>(LocalDate.of(2020, 01, 01));
+		this.startDate = new SimpleObjectProperty<LocalDate>(LocalDate.now());
+		this.endDate = new SimpleObjectProperty<LocalDate>(LocalDate.now());
 		this.memo = new SimpleStringProperty("none");
 		this.likeNo = new SimpleIntegerProperty(0);
 
