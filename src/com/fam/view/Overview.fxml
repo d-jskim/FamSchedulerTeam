@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="720.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.fam.view.OverviewController">
+   <children>
+      <SplitPane dividerPositions="0.651017214397496" layoutX="105.0" layoutY="104.0" prefHeight="720.0" prefWidth="1280.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="400.0">
+               <children>
+                  <TitledPane animated="false" layoutX="166.0" layoutY="149.0" prefHeight="718.0" prefWidth="764.0" text="To Do List" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TabPane layoutX="67.0" layoutY="14.0" prefHeight="688.0" prefWidth="762.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <tabs>
+                                  <Tab text="TO DO LIST">
+                                    <content>
+                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <TableView fx:id="taskTable" layoutX="45.0" layoutY="48.0" prefHeight="200.0" prefWidth="714.0">
+                                                  <columns>
+                                                    <TableColumn fx:id="categoryColumn" text="Category" />
+                                                    <TableColumn fx:id="taskColumn" prefWidth="79.0" text="Task" />
+                                                      <TableColumn fx:id="statusColumn" prefWidth="85.0" text="Status" />
+                                                      <TableColumn fx:id="memberColumn" prefWidth="97.0" text="Member" />
+                                                      <TableColumn fx:id="substituteColumn" prefWidth="102.0" text="Substitute" />
+                                                      <TableColumn fx:id="startDateColumn" prefWidth="110.0" text="Start Date" />
+                                                      <TableColumn fx:id="endDateColumn" prefWidth="107.0" text="End Date" />
+                                                      <TableColumn fx:id="likeNoColumn" prefWidth="53.0" text="Like" />
+                                                  </columns>
+                                                </TableView>
+                                                <GridPane layoutX="45.0" layoutY="271.0" prefHeight="273.0" prefWidth="715.0">
+                                                  <columnConstraints>
+                                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="333.0" minWidth="10.0" prefWidth="193.0" />
+                                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="484.0" minWidth="10.0" prefWidth="484.0" />
+                                                  </columnConstraints>
+                                                  <rowConstraints>
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                  </rowConstraints>
+                                                   <children>
+                                                      <Label prefHeight="19.0" prefWidth="206.0" text="Category" />
+                                                      <Label fx:id="categoryLabel" text="category" GridPane.columnIndex="1" />
+                                                      <Label prefHeight="19.0" prefWidth="199.0" text="Task" GridPane.rowIndex="1" />
+                                                      <Label prefHeight="19.0" prefWidth="208.0" text="Status" GridPane.rowIndex="2" />
+                                                      <Label fx:id="taskLabel" text="Task" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                                                      <Label fx:id="memberLabel" text="Member" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                                                      <Label prefHeight="19.0" prefWidth="208.0" text="Member" GridPane.rowIndex="3" />
+                                                      <Label prefHeight="19.0" prefWidth="208.0" text="Substitute" GridPane.rowIndex="4" />
+                                                      <Label prefHeight="19.0" prefWidth="208.0" text="Start Date" GridPane.rowIndex="5" />
+                                                      <Label prefHeight="19.0" prefWidth="208.0" text="End Date" GridPane.rowIndex="6" />
+                                                      <Label prefHeight="19.0" prefWidth="208.0" text="Memo" GridPane.rowIndex="7" />
+                                                      <Label prefHeight="19.0" prefWidth="208.0" text="Like" GridPane.rowIndex="8" />
+                                                      <Label fx:id="statusLabel" text="Status" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                                      <Label fx:id="substituteLabel" text="Substitute" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                                                      <Label fx:id="startDateLabel" text="Start date" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                                                      <Label fx:id="endDateLabel" text="End date" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                                                      <Label fx:id="memoLabel" text="memo" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+                                                      <Label fx:id="likeNoLabel" text="like" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+                                                   </children>
+                                                </GridPane>
+                                                <Button layoutX="45.0" layoutY="549.0" mnemonicParsing="false" onAction="#handleLikeNo" text="Like" />
+                                                <Button layoutX="493.0" layoutY="549.0" mnemonicParsing="false" onAction="#handleNewTask" prefHeight="35.0" prefWidth="80.0" text="New" />
+                                                <Button layoutX="583.0" layoutY="549.0" mnemonicParsing="false" onAction="#handleEditTask" prefHeight="35.0" prefWidth="80.0" text="Edit" />
+                                                <Button layoutX="673.0" layoutY="549.0" mnemonicParsing="false" onAction="#handleDeleteTask" prefHeight="35.0" prefWidth="80.0" text="Delete" />
+                                             </children></AnchorPane>
+                                    </content>
+                                  </Tab>
+                                  <Tab text="ANALYTICS">
+                                    <content>
+                                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                                    </content>
+                                  </Tab>
+                                </tabs>
+                              </TabPane>
+                           </children></AnchorPane>
+                    </content>
+                  </TitledPane>
+               </children></AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="718.0" prefWidth="427.0">
+               <children>
+                  <TitledPane animated="false" layoutX="219.0" layoutY="233.0" prefHeight="718.0" prefWidth="506.0" text="Chatting" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="687.0" prefWidth="396.0">
+                           <children>
+                              <Label fx:id="userCountLabel" layoutX="36.0" layoutY="69.0" prefHeight="29.0" prefWidth="369.0" text="The No. of Users" textFill="#c6c6c6" />
+                              <TextArea fx:id="outputText" layoutX="38.0" layoutY="230.0" prefHeight="322.0" prefWidth="367.0" />
+                              <TextArea fx:id="inputText" layoutX="38.0" layoutY="570.0" onKeyPressed="#inputTextKeyEvent" prefHeight="69.0" prefWidth="272.0" />
+                              <Button layoutX="329.0" layoutY="570.0" mnemonicParsing="false" onAction="#send" prefHeight="69.0" prefWidth="74.0" text="SEND" />
+                              <Label layoutX="36.0" layoutY="198.0" text="Chatting">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Label>
+                              <TableView fx:id="userTable" layoutX="36.0" layoutY="98.0" prefHeight="90.0" prefWidth="368.0">
+                                <columns>
+                                  <TableColumn fx:id="userColumn" prefWidth="367.0" text="User List" />
+                                </columns>
+                              </TableView>
+                              <GridPane layoutX="39.0" layoutY="14.0" prefHeight="30.0" prefWidth="362.0">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="175.0" minWidth="10.0" prefWidth="121.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="241.0" minWidth="10.0" prefWidth="241.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <Label text="Current User" />
+                                    <Label fx:id="testLabel" text="userid" textFill="#c3c3c3" GridPane.columnIndex="1" />
+                                 </children>
+                              </GridPane>
+                           </children></AnchorPane>
+                    </content>
+                  </TitledPane>
+               </children></AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>

@@ -70,7 +70,7 @@ public class TaskDAO implements TaskSql {
 	}// end method
 
 	/// INSERT
-	public int getInsertVO(Task vo) {
+	public int task_insert(Task vo) {
 
 		int res = 0; // 결과값리턴하는 변수 초기화
 		CallableStatement cstmt = null;
@@ -102,7 +102,7 @@ public class TaskDAO implements TaskSql {
 		return res;
 	}
 
-	public void getDelete(int taskNo) {
+	public void task_delete(int taskNo) {
 		CallableStatement cstmt = null;
 
 		try {
