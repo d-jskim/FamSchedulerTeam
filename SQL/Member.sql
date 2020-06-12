@@ -1,3 +1,5 @@
+--sequence 생성 전 삭제
+DROP SEQUENCE member_seq;
 --MemberId를 위한 Sequence 생성
 CREATE SEQUENCE member_seq
  START WITH     1
@@ -18,18 +20,34 @@ CREATE SEQUENCE member_seq
  	nickname varchar2(20) NOT NULL,
  	indate date DEFAULT sysdate
  );
- 
---familyId, indate 제외한 컬럼 값 insert
+
+--회원가입 sample data
+INSERT INTO member(memberNo, memberId, password, familyId, nickname) VALUES 
+(member_seq.nextVal,'apeach@famtodo.com','apeach', 1, '어피치');
+
+INSERT INTO member(memberNo, memberId, password, familyId, nickname) VALUES 
+(member_seq.nextVal,'con@famtodo.com','con', 1, '콘');
+
+INSERT INTO member(memberNo, memberId, password, familyId, nickname) VALUES 
+(member_seq.nextVal,'ryan@famtodo.com','ryan', 1, '라이언');
+
+INSERT INTO member(memberNo, memberId, password, familyId, nickname) VALUES 
+(member_seq.nextVal,'frodo@famtodo.com','frodo', 1, '프로도');
+
+INSERT INTO member(memberNo, memberId, password, familyId, nickname) VALUES 
+(member_seq.nextVal,'jay@famtodo.com','jay', 1, '제이');
+
+INSERT INTO member(memberNo, memberId, password, familyId, nickname) VALUES 
+(member_seq.nextVal,'neo@famtodo.com','neo', 1, '네오');
+
+
+
+ --familyId(테스트용) 
+--TODO: [Family] 테이블 생성 시 table_seq.nextVal을 알려주고 user가 방 생성 OK 클릭하면 family데이터 삽입
+--familyId, indate 제외한 컬럼 값 insert > 나중에 FAMILY 테이블과 [가족 그룹 만들기] 기능 넣어서 familyNo 부여하는 기능 있을 경우 사용
 INSERT INTO member(memberNo, memberId, password, nickname) VALUES 
 (member_seq.nextVal,'abc@gmail.com','abc', '무지');
 
---familyId(테스트용) 
---TODO: [Family] 테이블 생성 시 table_seq.nextVal을 알려주고 user가 방 생성 OK 클릭하면 family데이터 삽입
-INSERT INTO member(memberNo, memberId, password, familyId, nickname) VALUES 
-(member_seq.nextVal,'aaa@gmail.com','aaa', 1, '라이언');
-
-INSERT INTO member(memberNo, memberId, password, familyId, nickname) VALUES 
-(member_seq.nextVal,'bbb@gmail.com','bbb', 1, '어피치');
 
 
 
